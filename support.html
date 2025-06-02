@@ -5,59 +5,264 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support – RailTracker</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      line-height: 1.7;
-      color: #1a1a1a;
-      background-color: #f9f9f9;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1, h2 {
-      color: #0B3D91;
-      margin-top: 1.5rem;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: #666666;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #000000;
+      margin: 2.5rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .section-number {
+      color: #666666;
+      font-weight: 400;
+      margin-right: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: #333333;
     }
 
     ul {
-      margin-left: 1.2rem;
+      margin: 1rem 0 1.5rem 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      padding: 1rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #333333;
+      line-height: 1.6;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      color: #000000;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    strong {
+      color: #000000;
+      font-weight: 600;
     }
 
     a {
-      color: #0B3D91;
-      text-decoration: none;
+      color: #000000;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
     }
 
     a:hover {
-      text-decoration: underline;
+      opacity: 0.7;
+    }
+
+    .contact-section {
+      background: #f8f8f8;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .contact-email {
+      display: inline-block;
+      background: #000000;
+      color: #ffffff;
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1rem;
+      transition: opacity 0.2s ease;
+      font-size: 1rem;
+    }
+
+    .contact-email:hover {
+      opacity: 0.8;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .response-time {
+      background: #f8f8f8;
+      border: 1px solid #e5e5e5;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+      text-align: center;
+      border-left: 3px solid #000000;
     }
 
     .back-link {
+      display: inline-block;
+      background: #ffffff;
+      color: #000000;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
       margin-top: 3rem;
-      display: block;
-      text-align: left;
-      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: #f8f8f8;
+      border-color: #000000;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .back-link::before {
+      content: '←';
+      margin-right: 0.5rem;
+    }
+
+    .issue-category {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .issue-title {
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 0.5rem;
+    }
+
+    .issue-description {
+      color: #333333;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-section {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>RailTracker Support</h1>
-  <p>If you're experiencing issues with the app or have questions, we're here to help.</p>
+  <div class="container">
+    <div class="header">
+      <h1>Support</h1>
+      <p class="subtitle">We're here to help</p>
+    </div>
 
-  <h2>Contact Us</h2>
-  <p>The fastest way to get support is by email:</p>
-  <p><strong>Email:</strong> <a href="mailto:gladosjames1@gmail.com">gladosjames1@gmail.com</a></p>
+    <div class="contact-section">
+      <h2>Get Help</h2>
+      <p>The fastest way to get support is by email. We're committed to helping you get the most out of RailTracker.</p>
+      <a href="mailto:gladosjames1@gmail.com" class="contact-email">Email Support</a>
+    </div>
 
-  <h2>Common Issues</h2>
-  <ul>
-    <li><strong>Live data not updating:</strong> Please check your internet connection or try reopening the app.</li>
-    <li><strong>App crashes:</strong> Try force-quitting the app or reinstalling it. If the issue persists, contact us.</li>
-    <li><strong>Feedback or suggestions:</strong> We welcome your ideas! Email us anytime.</li>
-  </ul>
+    <h2><span class="section-number">1.</span>Common Issues & Solutions</h2>
+    
+    <div class="issue-category">
+      <div class="issue-title">Live data not updating</div>
+      <p class="issue-description">Check your internet connection and try refreshing the app. If the issue persists, try force-closing and reopening the app.</p>
+    </div>
 
-  <p>We aim to respond to support queries within 48 hours.</p>
+    <div class="issue-category">
+      <div class="issue-title">App crashes or freezes</div>
+      <p class="issue-description">Try force-quitting the app completely and reopening it. If problems continue, reinstall the app or contact us for assistance.</p>
+    </div>
 
-  <a class="back-link" href="index.html">← Back to RailTracker Privacy Policy</a>
+    <div class="issue-category">
+      <div class="issue-title">Feature requests & feedback</div>
+      <p class="issue-description">We welcome your suggestions! Email us with any ideas for improving RailTracker or new features you'd like to see.</p>
+    </div>
+
+    <div class="issue-category">
+      <div class="issue-title">Station or route missing</div>
+      <p class="issue-description">If you notice missing stations or routes, let us know. We rely on official transport data sources and can investigate discrepancies.</p>
+    </div>
+
+    <div class="response-time">
+      <p><strong>Response Time:</strong> We aim to respond to all support queries within 48 hours.</p>
+    </div>
+
+    <h2><span class="section-number">2.</span>Before Contacting Support</h2>
+    <p>To help us assist you more quickly, please try these steps first:</p>
+    <ul>
+      <li>Restart the RailTracker app completely</li>
+      <li>Check your internet connection</li>
+      <li>Make sure you have the latest version of the app</li>
+      <li>Note your device model and operating system version</li>
+    </ul>
+
+    <h2><span class="section-number">3.</span>Privacy & Support</h2>
+    <p>When you contact support, we may ask for technical details about your device or the issue you're experiencing. This information is only used to help resolve your problem and is not stored or shared.</p>
+
+    <a href="index.html" class="back-link">Privacy Policy</a>
+
+    <p style="text-align:center; font-size: 0.9rem; color: #666; margin-top: 2rem;">Support policy last updated: June 1, 2025</p>
+  </div>
 </body>
 </html>
